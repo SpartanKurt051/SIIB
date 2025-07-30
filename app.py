@@ -10,6 +10,22 @@ st.write(df)
 
 import matplotlib.pyplot as plt
 
+st.markdown("""
+    <style>
+        .main {
+            padding-left: 0rem;
+            padding-right: 0rem;
+        }
+        .block-container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            width: 100vw;
+            max-width: 100vw;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+st.title("Hello world")
 # Create two columns for layout (side by side)
 col1, col2 = st.columns(2)
 

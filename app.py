@@ -7,3 +7,31 @@ df = pd.read_excel('SIIB.xlsx')
 # Display the data
 st.title("SIIB Data Preview")
 st.write(df)
+
+import matplotlib.pyplot as plt
+
+# Create two columns for layout (side by side)
+col1, col2 = st.columns(2)
+
+def dummy_pie_chart(title):
+    # Dummy data
+    sizes = [30, 30, 40]
+    labels = ['A', 'B', 'C']
+    fig, ax = plt.subplots()
+    ax.pie(sizes, labels=labels, autopct='%1.1f%%')
+    ax.set_title(title)
+    return fig
+
+# Left section: 3 pie charts
+with col1:
+    st.subheader("Section 1")
+    st.pyplot(dummy_pie_chart("Pie Chart 1"))
+    st.pyplot(dummy_pie_chart("Pie Chart 2"))
+    st.pyplot(dummy_pie_chart("Pie Chart 3"))
+
+# Right section: 3 pie charts
+with col2:
+    st.subheader("Section 2")
+    st.pyplot(dummy_pie_chart("Pie Chart 4"))
+    st.pyplot(dummy_pie_chart("Pie Chart 5"))
+    st.pyplot(dummy_pie_chart("Pie Chart 6"))

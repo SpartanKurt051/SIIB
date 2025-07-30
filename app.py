@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-
+import matplotlib.pyplot as plt
 # Read the Excel file
 df = pd.read_excel('SIIB.xlsx')
 
@@ -8,7 +8,6 @@ df = pd.read_excel('SIIB.xlsx')
 st.title("SIIB Data Preview")
 st.write(df)
 
-import matplotlib.pyplot as plt
 
 st.markdown("""
     <style>
@@ -28,7 +27,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("Hello world")
+#st.title("Hello world")
 # Create two columns for layout (side by side)
 col1, col2 = st.columns([1, 1], gap="large")
 

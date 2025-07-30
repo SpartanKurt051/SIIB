@@ -14,10 +14,11 @@ employee_count = 100
 # 'Performance & Rewards', 'Diversity & Inclusion'
 
 kpi_strengths = [
-    'Overall Engagement',
+    'Engagement',
     'Customer Centricity',
     'Job and Work Environments',
-    'Careers and Leadership Effectiveness'
+    'Careers',
+    'Leadership Effectiveness'
 ]
 strengths_sorted = df[kpi_strengths].mean().sort_values(ascending=False)
 

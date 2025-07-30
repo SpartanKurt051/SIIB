@@ -1,9 +1,9 @@
 import streamlit as st
-
-st.title("Hello world")
 import pandas as pd
 
+# Read the Excel file
 df = pd.read_excel('SIIB.xlsx')
-st.write(df)  # Display the dataframe
 
-st.bar_chart(df)  # Simple bar chart (works if your data is numeric)
+# Display the data
+st.title("SIIB Data Preview")
+st.write(df)

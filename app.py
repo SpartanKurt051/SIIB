@@ -22,12 +22,16 @@ st.markdown("""
             width: 100vw;
             max-width: 100vw;
         }
+         .css-1r6slb3 {
+            margin-left: 40px !important;
+        }
     </style>
 """, unsafe_allow_html=True)
 
 st.title("Hello world")
 # Create two columns for layout (side by side)
-col1, col2 = st.columns(2)
+col1, col2 = st.columns([1, 1], gap="large")
+
 
 def dummy_pie_chart(title):
     # Dummy data

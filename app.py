@@ -1,39 +1,45 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-# Read the Excel file
-df = pd.read_excel('SIIB.xlsx')
 
-# Display the data
-st.write(df)
+# Load data from your excel sheet
+df = pd.read_excel('Case-Role_Engagement_Case.xlsx')
 
+# Replace these with the actual column names in your sheet
+# This is a template; adjust as needed!
+employee_count = 100
 
-st.markdown("""
-    <style>
-        .main {
-            padding-left: 0rem;
-            padding-right: 0rem;
-        }
-        .block-container {
-            padding-left: 1rem;
-            padding-right: 1rem;
-            width: 100vw;
-            max-width: 100vw;
-        }
-         .css-1r6slb3 {
-            margin-left: 40px !important;
-        }
-    </style>
-""", unsafe_allow_html=True)
+# Assuming the following columns in your sheet:
+# 'Overall Engagement', 'Customer Centricity', 'Job and Work Environments',
+# 'Careers and Leadership Effectiveness', 'Work Life Balance',
+# 'Performance & Rewards', 'Diversity & Inclusion'
 
-#st.title("Hello world")
-# Create two columns for layout (side by side)
-col1, col2 = st.columns([1, 1], gap="large")
+kpi_strengths = [
+    'Overall Engagement',
+    'Customer Centricity',
+    'Job and Work Environments',
+    'Careers and Leadership Effectiveness'
+]
+strengths_sorted = df[kpi_strengths].mean().sort_values(ascending=False)
 
-# Left section: 3 pie charts
-with col1:
-   pass
+kpi_weaknesses = [
+    'Work Life Balance',
+    'Performance & Rewards',
+    'Diversity & Inclusion'
+]
+weaknesses_sorted = df[kpi_weaknesses].mean().sort_values(ascending=True)
 
-# Right section: 3 pie charts
-with col2:
-   pass
+st.title("Dashboard KPIs")
+
+# KPI indicators at the top in columns
+kpi_cols = st.columns(6)
+kpi_cols[0].metric("Employee Count", employee_count)
+
+# Add strengths sorted descending
+for idx, (kpi, value) in enumerate(strengths_sorted.items()):
+    kpi_cols[idx+1].metric(kpi, f"{value:.2f}")
+
+# If you want the weaknesses displayed as well, add another row:
+st.subheader("Weaknesses")
+weak_cols = st.columns(3)
+for idx, (kpi, value) in enumerate(weaknesses_sorted.items()):
+    weak_cols[idx].metric(kpi, f"{value:.2f}")

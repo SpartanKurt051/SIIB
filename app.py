@@ -34,26 +34,6 @@ st.markdown("""
         max-width: 1500px;
     }
 
-    .small-chart-box {
-        background: #f5f5f5;
-        padding: 12px 8px;
-        border-radius: 1px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        margin-bottom: 18px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-width: 100px;
-        max-width: 100px;
-        margin-left: 100px;
-        margin-right: 100px;
-    }
-     .stColumns {
-        gap: 100px !important;
-    }
-    .css-1fcb47b, .css-1wmy9hl {
-        margin-right: 24px;
-    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -83,31 +63,3 @@ females_score = engagement_row['Female'].values[0]
 executive_score = engagement_row['Executive'].values[0]
 
 
-col1, col2 = st.columns(2)
-
-# --- Generate 4 pie charts for each column ---
-def pie_chart(data, labels, title):
-    fig, ax = plt.subplots(figsize=(2, 2))
-    ax.pie(data, labels=labels, autopct='%1.1f%%')
-    ax.axis('equal')
-    ax.set_title(title)
-    st.pyplot(fig)
-
-# Sample data for demonstration
-data_list = [
-    ([25, 75], ['A', 'B'], 'Pie Chart 1'),
-    ([40, 60], ['C', 'D'], 'Pie Chart 2'),
-    ([10, 90], ['E', 'F'], 'Pie Chart 3'),
-    ([55, 45], ['G', 'H'], 'Pie Chart 4'),
-]
-
-# First 4 pie charts on left
-with col1:
-    for data, labels, title in data_list:
-        st.markdown('<div class="small-chart-box">', unsafe_allow_html=True)
-        pie_chart(data, labels, title)
-        st.markdown('</div>', unsafe_allow_html=True)
-# Second 4 pie charts on right
-with col2:
-    for data, labels, title in data_list:
-        pie_chart(data, labels, f"{title} (Right)")

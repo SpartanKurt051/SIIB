@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+
 # Provided values
 employee_count = 100
 
@@ -34,8 +35,8 @@ st.markdown("""
         max-width: 1500px;
     }
 
- .custom-column-box {
-       border: 2px solid #cccccc;
+    .custom-column-box {
+        border: 2px solid #cccccc;
         border-radius: 14px;
         padding: 24px 12px;
         background: rgba(0,0,0,0); /* Transparent background */
@@ -52,10 +53,22 @@ st.markdown("""
         text-align: center;
     }
 
-   .stColumns {
+.pie-chart-box {
+    width: 25%; /* A quarter of the parent container */
+    min-width: 200px;
+    max-width: 350px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0); /* Transparent */
+    border-radius: 10px;
+}
+
+    .stColumns {
         gap: 40px !important; /* Increase gap between columns */
     }
-
     </style>
 """, unsafe_allow_html=True)
 
@@ -81,45 +94,64 @@ df = df.iloc[:, 2:]
 st.write(df)
 
 # Divide the page into two columns below the Excel file
-left_col, right_col = st.columns(2)
+# Demographics Section
+st.markdown("## Demographic Breakdown")
+col1, col2, col3 = st.columns(3)
 
-with left_col:
-   gender_cols = ['Male', 'Female']
-gender_counts = df[gender_cols].sum()
-gender_sizes = gender_counts.values
-gender_labels = gender_counts.index.tolist()
-
-# Age columns
-#age_cols = ['Up-to 35 yrs old', '35-45 yrs old', '45+ yrs old']
-#age_counts = df[age_cols].sum()
-#age_sizes = age_counts.values
-#age_labels = age_counts.index.tolist()
-
-# Department columns
-dept_cols = ['Sales & Marketing', 'R&D', 'Manufacturing', 'HR', 'Finance']
-dept_counts = df[dept_cols].sum()
-dept_sizes = dept_counts.values
-dept_labels = dept_counts.index.tolist()
-
-# Tenure columns
-tenure_cols = ['0 - 6 months', '1 - 3 Years', '3 - 5 Years', '5 + years']
-tenure_counts = df[tenure_cols].sum()
-tenure_sizes = tenure_counts.values
-tenure_labels = tenure_counts.index.tolist()
-
-left_col, right_col = st.columns(2)
-
-with left_col:
+# Column 1 — Gender
+with col1:
     st.markdown('<div class="custom-column-box">', unsafe_allow_html=True)
+    st.markdown('<div class="pie-chart-box">', unsafe_allow_html=True)
 
-    # Gender Pie Chart (Assuming columns 2 and 3 are Male and Female)
     gender_cols = df.columns[1:3]
     gender_counts = df[gender_cols].sum()
-    fig1, ax1 = plt.subplots()
+    fig1, ax1 = plt.subplots(figsize=(2,2))
     ax1.pie(gender_counts, labels=gender_cols, autopct='%1.1f%%', startangle=90)
-    ax1.set_title("Gender Distribution")
+    ax1.set_title("Gender", fontsize=10)
     st.pyplot(fig1)
 
     st.markdown('</div>', unsafe_allow_html=True)
-with right_col:
-    st.markdown('<div class="custom-column-box">Right side content goes here.</div>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
+
+# Column 2 — Department
+with col2:
+    st.markdown('<div class="custom-column-box">', unsafe_allow_html=True)
+    st.markdown('<div class="pie-chart-box">', unsafe_allow_html=True)
+
+    dept_cols = df.columns[8:13]
+    dept_counts = df[dept_cols].sum()
+    fig2, ax2 = plt.subplots(figsize=(2,2))
+    ax2.pie(dept_counts, labels=dept_cols, autopct='%1.1f%%', startangle=90)
+    ax2.set_title("Department", fontsize=10)
+    st.pyplot(fig2)
+
+    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    st.markdown('<div class="custom-column-box">', unsafe_allow_html=True)
+    st.markdown('<div class="pie-chart-box">', unsafe_allow_html=True)
+
+    age_cols = df.columns[20:23]
+    age_counts = df[age_cols].sum()
+    fig3, ax3 = plt.subplots(figsize=(2,2))
+    ax3.pie(age_counts, labels=age_cols, autopct='%1.1f%%', startangle=90)
+    ax3.set_title("Age Group", fontsize=10)
+    st.pyplot(fig3)
+
+    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
+
+# Column 3 — Tenure Split
+with col3:
+    st.markdown('<div class="custom-column-box">', unsafe_allow_html=True)
+    st.markdown('<div class="pie-chart-box">', unsafe_allow_html=True)
+
+    tenure_cols = df.columns[16:20]
+    tenure_counts = df[tenure_cols].sum()
+    fig4, ax4 = plt.subplots(figsize=(2,2))
+    ax4.pie(tenure_counts, labels=tenure_cols, autopct='%1.1f%%', startangle=90)
+    ax4.set_title("Tenure", fontsize=10)
+    st.pyplot(fig4)
+
+    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)

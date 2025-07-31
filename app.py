@@ -34,6 +34,28 @@ st.markdown("""
         max-width: 1500px;
     }
 
+ .custom-column-box {
+        border: 2px solid #cccccc;
+        border-radius: 14px;
+        padding: 24px 12px;
+        background: #f9f9f9;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+        height: 100%;
+        margin-bottom: 18px;
+        margin-left: 8px;
+        margin-right: 8px;
+        text-align: center;
+    }
+
+   .stColumns {
+        gap: 40px !important; /* Increase gap between columns */
+    }
+
     </style>
 """, unsafe_allow_html=True)
 

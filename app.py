@@ -54,6 +54,6 @@ else:
     
 file_path = 'SIIB.xlsx'
 df = pd.read_excel(file_path)
-
+print(df)
 # Print the column names
 print("Column names:", df.columns.tolist())

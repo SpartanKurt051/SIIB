@@ -37,16 +37,16 @@ st.markdown("""
     .small-chart-box {
         background: #f5f5f5;
         padding: 12px 8px;
-        border-radius: 12px;
+        border-radius: 1px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         margin-bottom: 18px;
         display: flex;
         justify-content: center;
         align-items: center;
-        min-width: 180px;
-        max-width: 220px;
-        margin-left: auto;
-        margin-right: auto;
+        min-width: 100px;
+        max-width: 100px;
+        margin-left: 100px;
+        margin-right: 100px;
     }
      .stColumns {
         gap: 100px !important;

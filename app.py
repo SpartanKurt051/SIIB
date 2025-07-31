@@ -51,3 +51,9 @@ if len(weakness_scores_sorted) > 0:
         weak_cols[i].metric(metric, f"{score}")
 else:
     st.info("No weakness KPIs found.")
+    
+file_path = 'SIIB.xlsx'
+df = pd.read_excel(file_path)
+
+# Print the column names
+print("Column names:", df.columns.tolist())

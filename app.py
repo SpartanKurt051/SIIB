@@ -72,7 +72,7 @@ col1, col2 = st.columns(2)
 
 # --- Generate 4 pie charts for each column ---
 def pie_chart(data, labels, title):
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(2, 2))
     ax.pie(data, labels=labels, autopct='%1.1f%%')
     ax.set_title(title)
     st.pyplot(fig)

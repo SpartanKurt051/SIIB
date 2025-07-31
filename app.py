@@ -110,8 +110,38 @@ tenure_labels = tenure_counts.index.tolist()
 left_col, right_col = st.columns(2)
 
 with left_col:
-    st.markdown('<div class="custom-column-box">Right side content goes here.</div>', unsafe_allow_html=True)
-    st.write("Columns in df:", df.columns.tolist())
+     gender_cols = df.columns[0:2]
+    gender_counts = df[gender_cols].sum()
+    fig1, ax1 = plt.subplots()
+    ax1.pie(gender_counts, labels=gender_cols, autopct='%1.1f%%', startangle=90)
+    ax1.set_title("Gender Distribution")
+    st.pyplot(fig1)
+
+    # Age Pie Chart (columns 20-23)
+    age_cols = df.columns[19:23]
+    age_counts = df[age_cols].sum()
+    fig2, ax2 = plt.subplots()
+    ax2.pie(age_counts, labels=age_cols, autopct='%1.1f%%', startangle=90)
+    ax2.set_title("Age Distribution")
+    st.pyplot(fig2)
+
+    # Department Pie Chart (columns 9-13)
+    dept_cols = df.columns[8:13]
+    dept_counts = df[dept_cols].sum()
+    fig3, ax3 = plt.subplots()
+    ax3.pie(dept_counts, labels=dept_cols, autopct='%1.1f%%', startangle=90)
+    ax3.set_title("Department Distribution")
+    st.pyplot(fig3)
+
+    # Tenure Pie Chart (columns 17-20)
+    tenure_cols = df.columns[16:20]
+    tenure_counts = df[tenure_cols].sum()
+    fig4, ax4 = plt.subplots()
+    ax4.pie(tenure_counts, labels=tenure_cols, autopct='%1.1f%%', startangle=90)
+    ax4.set_title("Tenure Distribution")
+    st.pyplot(fig4)
+
+    st.markdown('</div>', unsafe_allow_html=True)
 with right_col:
     st.markdown('<div class="custom-column-box">Right side content goes here.</div>', unsafe_allow_html=True)
 

@@ -115,7 +115,6 @@ with col1:
 
 # Column 2 — Department
 with col2:
-    st.markdown('<div class="custom-column-box">', unsafe_allow_html=True)
     st.markdown('<div class="pie-chart-box">', unsafe_allow_html=True)
 
     dept_cols = df.columns[8:13]
@@ -127,8 +126,6 @@ with col2:
 
     st.markdown('</div>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
-
-    st.markdown('<div class="custom-column-box">', unsafe_allow_html=True)
     st.markdown('<div class="pie-chart-box">', unsafe_allow_html=True)
 
     age_cols = df.columns[20:23]
@@ -143,7 +140,6 @@ with col2:
 
 # Column 3 — Tenure Split
 with col3:
-    st.markdown('<div class="pie-chart-box">', unsafe_allow_html=True)
 
     tenure_cols = df.columns[16:20]
     tenure_counts = df[tenure_cols].sum()

@@ -35,10 +35,10 @@ st.markdown("""
     }
 
  .custom-column-box {
-        border: 2px solid #cccccc;
+       border: 2px solid #cccccc;
         border-radius: 14px;
         padding: 24px 12px;
-        background: #f9f9f9;
+        background: rgba(0,0,0,0); /* Transparent background */
         box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         display: flex;
         flex-direction: column;

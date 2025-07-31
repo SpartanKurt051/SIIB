@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+
 # Provided values
 employee_count = 100
 
@@ -34,8 +35,8 @@ st.markdown("""
         max-width: 1500px;
     }
 
- .custom-column-box {
-       border: 2px solid #cccccc;
+    .custom-column-box {
+        border: 2px solid #cccccc;
         border-radius: 14px;
         padding: 24px 12px;
         background: rgba(0,0,0,0); /* Transparent background */
@@ -52,10 +53,9 @@ st.markdown("""
         text-align: center;
     }
 
-   .stColumns {
+    .stColumns {
         gap: 40px !important; /* Increase gap between columns */
     }
-
     </style>
 """, unsafe_allow_html=True)
 
@@ -84,36 +84,11 @@ st.write(df)
 left_col, right_col = st.columns(2)
 
 with left_col:
-   gender_cols = ['Male', 'Female']
-gender_counts = df[gender_cols].sum()
-gender_sizes = gender_counts.values
-gender_labels = gender_counts.index.tolist()
-
-# Age columns
-#age_cols = ['Up-to 35 yrs old', '35-45 yrs old', '45+ yrs old']
-#age_counts = df[age_cols].sum()
-#age_sizes = age_counts.values
-#age_labels = age_counts.index.tolist()
-
-# Department columns
-dept_cols = ['Sales & Marketing', 'R&D', 'Manufacturing', 'HR', 'Finance']
-dept_counts = df[dept_cols].sum()
-dept_sizes = dept_counts.values
-dept_labels = dept_counts.index.tolist()
-
-# Tenure columns
-tenure_cols = ['0 - 6 months', '1 - 3 Years', '3 - 5 Years', '5 + years']
-tenure_counts = df[tenure_cols].sum()
-tenure_sizes = tenure_counts.values
-tenure_labels = tenure_counts.index.tolist()
-
-left_col, right_col = st.columns(2)
-
-with left_col:
+    # First box: Gender Pie Chart
     st.markdown('<div class="custom-column-box">', unsafe_allow_html=True)
 
-    # Gender Pie Chart (Assuming columns 2 and 3 are Male and Female)
-    gender_cols = df.columns[1:3]
+    # Gender Pie Chart (Assuming columns 2 and 3 are Male and Female after slicing)
+    gender_cols = df.columns[0:2]  # Adjust if your gender columns differ
     gender_counts = df[gender_cols].sum()
     fig1, ax1 = plt.subplots()
     ax1.pie(gender_counts, labels=gender_cols, autopct='%1.1f%%', startangle=90)
@@ -121,6 +96,10 @@ with left_col:
     st.pyplot(fig1)
 
     st.markdown('</div>', unsafe_allow_html=True)
+
+    # If you want additional boxes, add them below
+    # st.markdown('<div class="custom-column-box">Other left side content...</div>', unsafe_allow_html=True)
+
 with right_col:
     st.markdown('<div class="custom-column-box">Right side content goes here.</div>', unsafe_allow_html=True)
-
+    # Add more right side content here as needed

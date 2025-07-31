@@ -53,6 +53,19 @@ st.markdown("""
         text-align: center;
     }
 
+.pie-chart-box {
+    width: 25%; /* A quarter of the parent container */
+    min-width: 200px;
+    max-width: 350px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0); /* Transparent */
+    border-radius: 10px;
+}
+
     .stColumns {
         gap: 40px !important; /* Increase gap between columns */
     }
@@ -84,21 +97,20 @@ st.write(df)
 left_col, right_col = st.columns(2)
 
 with left_col:
-    # First box: Gender Pie Chart
+  
     st.markdown('<div class="custom-column-box">', unsafe_allow_html=True)
+    st.markdown('<div class="pie-chart-box">', unsafe_allow_html=True)
 
-    # Gender Pie Chart (Assuming columns 2 and 3 are Male and Female after slicing)
-    gender_cols = df.columns[1:3]  # Adjust if your gender columns differ
+    gender_cols = df.columns[0:2]  # Adjust if your gender columns differ
     gender_counts = df[gender_cols].sum()
-    fig1, ax1 = plt.subplots()
+    fig1, ax1 = plt.subplots(figsize=(2,2))  # Small figure for the box
     ax1.pie(gender_counts, labels=gender_cols, autopct='%1.1f%%', startangle=90)
-    ax1.set_title("Gender Distribution")
+    ax1.set_title("Gender Distribution", fontsize=10)
     st.pyplot(fig1)
 
+    st.markdown('</div>', unsafe_allow_html=True)  
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # If you want additional boxes, add them below
-    # st.markdown('<div class="custom-column-box">Other left side content...</div>', unsafe_allow_html=True)
 
 with right_col:
     st.markdown('<div class="custom-column-box">Right side content goes here.</div>', unsafe_allow_html=True)

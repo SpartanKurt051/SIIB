@@ -101,7 +101,7 @@ with left_col:
     st.markdown('<div class="custom-column-box">', unsafe_allow_html=True)
     st.markdown('<div class="pie-chart-box">', unsafe_allow_html=True)
 
-    gender_cols = df.columns[0:2]  # Adjust if your gender columns differ
+    gender_cols = df.columns[1:3]  # Adjust if your gender columns differ
     gender_counts = df[gender_cols].sum()
     fig1, ax1 = plt.subplots(figsize=(2,2))  # Small figure for the box
     ax1.pie(gender_counts, labels=gender_cols, autopct='%1.1f%%', startangle=90)

@@ -30,8 +30,8 @@ st.markdown("""
         padding-bottom: 100px;
         padding-left: 100px;
         padding-right: 100px;
-        width: 5000px;
-        max-width: 5000px;
+        width: 1000px;
+        max-width: 1000px;
     }
      .stColumns {
         gap: 100px !important;

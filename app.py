@@ -27,24 +27,6 @@ weakness_scores_sorted = dict(sorted(weakness_scores.items(), key=lambda item: i
 st.markdown("""
     <style>
 
-    .custom-column-box {
-        border: 2px solid #cccccc;
-        border-radius: 14px;
-        padding: 24px 12px;
-        background: rgba(0,0,0,0); /* Transparent background */
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 200px;
-        height: 100%;
-        margin-bottom: 18px;
-        margin-left: 8px;
-        margin-right: 8px;
-        text-align: center;
-    }
-
 .demographic-box {
         border: 2px solid #ccc;
         border-radius: 12px;

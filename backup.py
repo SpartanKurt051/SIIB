@@ -26,32 +26,6 @@ weakness_scores_sorted = dict(sorted(weakness_scores.items(), key=lambda item: i
 # Page styling: full width, spacing
 st.markdown("""
     <style>
-    .block-container {
-        padding-top: 100px;
-        padding-bottom: 100px;
-        padding-left: 10px;
-        padding-right: 10px;
-        width: 1500px;
-        max-width: 1500px;
-    }
-
-    .custom-column-box {
-        border: 2px solid #cccccc;
-        border-radius: 14px;
-        padding: 24px 12px;
-        background: rgba(0,0,0,0); /* Transparent background */
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 200px;
-        height: 100%;
-        margin-bottom: 18px;
-        margin-left: 8px;
-        margin-right: 8px;
-        text-align: center;
-    }
 
 .demographic-box {
         border: 2px solid #ccc;
@@ -68,19 +42,6 @@ st.markdown("""
         flex-direction: column;
         text-align: center;
     }
-
-.pie-chart-box {
-    width: 25%; /* A quarter of the parent container */
-    min-width: 200px;
-    max-width: 350px;
-    height: 200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255,255,255,0); /* Transparent */
-    border-radius: 10px;
-}
 
     .stColumns {
         gap: 40px !important; /* Increase gap between columns */

@@ -143,7 +143,6 @@ with col2:
 
 # Column 3 — Tenure Split
 with col3:
-    st.markdown('<div class="custom-column-box">', unsafe_allow_html=True)
     st.markdown('<div class="pie-chart-box">', unsafe_allow_html=True)
 
     tenure_cols = df.columns[16:20]
@@ -153,5 +152,4 @@ with col3:
     ax4.set_title("Tenure", fontsize=10)
     st.pyplot(fig4)
 
-    st.markdown('</div>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)

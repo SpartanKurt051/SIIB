@@ -53,4 +53,5 @@ else:
     st.info("No weakness KPIs found.")
 
 df = pd.read_excel('SIIB.xlsx')
+df = df.iloc[:, 2:]
 st.write(df)

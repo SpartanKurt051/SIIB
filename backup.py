@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
 # Provided values
 employee_count = 100
 
@@ -25,13 +26,36 @@ weakness_scores_sorted = dict(sorted(weakness_scores.items(), key=lambda item: i
 st.markdown("""
     <style>
     .block-container {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        width: 100vw;
-        max-width: 100vw;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 1500px;
+        max-width: 1500px;
     }
+
+ .custom-column-box {
+       border: 2px solid #cccccc;
+        border-radius: 14px;
+        padding: 24px 12px;
+        background: rgba(0,0,0,0); /* Transparent background */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+        height: 100%;
+        margin-bottom: 18px;
+        margin-left: 8px;
+        margin-right: 8px;
+        text-align: center;
+    }
+
+   .stColumns {
+        gap: 40px !important; /* Increase gap between columns */
+    }
+
     </style>
 """, unsafe_allow_html=True)
 
@@ -59,5 +83,15 @@ st.write(df)
 engagement_row = df[df.iloc[:, 0] == 'Engagement']
 females_score = engagement_row['Female'].values[0]
 executive_score = engagement_row['Executive'].values[0]
-st.write(f"Engagement score for Females: {females_score}")
-st.write(f"Engagement score for Executive: {executive_score}")
+
+# Existing code
+st.write(df)
+
+# Divide the page into two columns below the Excel file
+left_col, right_col = st.columns(2)
+
+with left_col:
+    st.markdown('<div class="custom-column-box">Left side content goes here.</div>', unsafe_allow_html=True)
+
+with right_col:
+    st.markdown('<div class="custom-column-box">Right side content goes here.</div>', unsafe_allow_html=True)

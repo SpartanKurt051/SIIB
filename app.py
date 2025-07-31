@@ -88,7 +88,7 @@ with left_col:
     st.markdown('<div class="custom-column-box">', unsafe_allow_html=True)
 
     # Gender Pie Chart (Assuming columns 2 and 3 are Male and Female after slicing)
-    gender_cols = df.columns[0:2]  # Adjust if your gender columns differ
+    gender_cols = df.columns[1:3]  # Adjust if your gender columns differ
     gender_counts = df[gender_cols].sum()
     fig1, ax1 = plt.subplots()
     ax1.pie(gender_counts, labels=gender_cols, autopct='%1.1f%%', startangle=90)

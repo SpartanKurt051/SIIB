@@ -109,9 +109,15 @@ with col1:
     ax1.set_title("Gender", fontsize=10)
     st.pyplot(fig1)
 
-    st.markdown('</div>', unsafe_allow_html=True)
+      age_cols = df.columns[20:23]
+    age_counts = df[age_cols].sum()
+    fig3, ax3 = plt.subplots(figsize=(2,2))
+    ax3.pie(age_counts, labels=age_cols, autopct='%1.1f%%', startangle=90)
+    ax3.set_title("Age Group", fontsize=10)
+    st.pyplot(fig3)
 
-# Column 2 — Department
+    st.markdown('</div>', unsafe_allow_html=True)
+  
 with col2:
     st.markdown('<div class="pie-chart-box">', unsafe_allow_html=True)
 
@@ -125,16 +131,6 @@ with col2:
     st.markdown('</div>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
     st.markdown('<div class="pie-chart-box">', unsafe_allow_html=True)
-
-    age_cols = df.columns[20:23]
-    age_counts = df[age_cols].sum()
-    fig3, ax3 = plt.subplots(figsize=(2,2))
-    ax3.pie(age_counts, labels=age_cols, autopct='%1.1f%%', startangle=90)
-    ax3.set_title("Age Group", fontsize=10)
-    st.pyplot(fig3)
-
-    st.markdown('</div>', unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
 
 # Column 3 — Tenure Split
 with col3:

@@ -26,15 +26,15 @@ weakness_scores_sorted = dict(sorted(weakness_scores.items(), key=lambda item: i
 st.markdown("""
     <style>
     .block-container {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        width: 100vw;
-        max-width: 100vw;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        padding-left: 100px;
+        padding-right: 100px;
+        width: 100px;
+        max-width: 100px;
     }
      .stColumns {
-        gap: 48px !important;
+        gap: 100px !important;
     }
     .css-1fcb47b, .css-1wmy9hl {
         margin-right: 24px;

@@ -30,7 +30,7 @@ st.markdown("""
         padding-bottom: 100px;
         padding-left: 100px;
         padding-right: 100px;
-        width: 1000px;
+        width: 1500px;
         max-width: 10000px;
     }
      .stColumns {

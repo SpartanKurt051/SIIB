@@ -26,14 +26,6 @@ weakness_scores_sorted = dict(sorted(weakness_scores.items(), key=lambda item: i
 # Page styling: full width, spacing
 st.markdown("""
     <style>
-    .block-container {
-        padding-top: 100px;
-        padding-bottom: 100px;
-        padding-left: 10px;
-        padding-right: 10px;
-        width: 1500px;
-        max-width: 1500px;
-    }
 
     .custom-column-box {
         border: 2px solid #cccccc;

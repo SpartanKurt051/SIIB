@@ -109,7 +109,7 @@ with col1:
     ax1.set_title("Gender", fontsize=10)
     st.pyplot(fig1)
 
-      age_cols = df.columns[20:23]
+    age_cols = df.columns[20:23]
     age_counts = df[age_cols].sum()
     fig3, ax3 = plt.subplots(figsize=(2,2))
     ax3.pie(age_counts, labels=age_cols, autopct='%1.1f%%', startangle=90)

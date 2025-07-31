@@ -43,19 +43,6 @@ st.markdown("""
         text-align: center;
     }
 
-.pie-chart-box {
-    width: 25%; /* A quarter of the parent container */
-    min-width: 200px;
-    max-width: 350px;
-    height: 200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255,255,255,0); /* Transparent */
-    border-radius: 10px;
-}
-
     .stColumns {
         gap: 40px !important; /* Increase gap between columns */
     }

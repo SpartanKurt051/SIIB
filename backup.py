@@ -53,6 +53,22 @@ st.markdown("""
         text-align: center;
     }
 
+.demographic-box {
+        border: 2px solid #ccc;
+        border-radius: 12px;
+        padding: 16px;
+        margin: 12px auto;
+        width: 90%;
+        min-height: 220px;
+        background-color: rgba(255,255,255,0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        flex-direction: column;
+        text-align: center;
+    }
+
 .pie-chart-box {
     width: 25%; /* A quarter of the parent container */
     min-width: 200px;
@@ -98,46 +114,40 @@ col1, col2, col3 = st.columns(3)
 
 # Column 1 — Gender
 with col1:
-    st.markdown('<div class="pie-chart-box">', unsafe_allow_html=True)
-
     gender_cols = df.columns[1:3]
     gender_counts = df[gender_cols].sum()
-    fig1, ax1 = plt.subplots(figsize=(2,2))
+    fig1, ax1 = plt.subplots(figsize=(2.5,2.5))
     ax1.pie(gender_counts, labels=gender_cols, autopct='%1.1f%%', startangle=90)
     ax1.set_title("Gender", fontsize=10)
+    st.markdown('<div class="demographic-box">', unsafe_allow_html=True)
     st.pyplot(fig1)
+    st.markdown('</div>', unsafe_allow_html=True)
 
     age_cols = df.columns[20:23]
     age_counts = df[age_cols].sum()
-    fig3, ax3 = plt.subplots(figsize=(2,2))
+    fig3, ax3 = plt.subplots(figsize=(2.5,2.5))
     ax3.pie(age_counts, labels=age_cols, autopct='%1.1f%%', startangle=90)
     ax3.set_title("Age Group", fontsize=10)
+    st.markdown('<div class="demographic-box">', unsafe_allow_html=True)
     st.pyplot(fig3)
-
     st.markdown('</div>', unsafe_allow_html=True)
-  
-with col2:
-    st.markdown('<div class="pie-chart-box">', unsafe_allow_html=True)
 
+with col2:
     dept_cols = df.columns[8:13]
     dept_counts = df[dept_cols].sum()
-    fig2, ax2 = plt.subplots(figsize=(2,2))
+    fig2, ax2 = plt.subplots(figsize=(2.5,2.5))
     ax2.pie(dept_counts, labels=dept_cols, autopct='%1.1f%%', startangle=90)
     ax2.set_title("Department", fontsize=10)
+    st.markdown('<div class="demographic-box">', unsafe_allow_html=True)
     st.pyplot(fig2)
-
     st.markdown('</div>', unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
-    st.markdown('<div class="pie-chart-box">', unsafe_allow_html=True)
 
-# Column 3 — Tenure Split
 with col3:
-
     tenure_cols = df.columns[16:20]
     tenure_counts = df[tenure_cols].sum()
-    fig4, ax4 = plt.subplots(figsize=(2,2))
+    fig4, ax4 = plt.subplots(figsize=(2.5,2.5))
     ax4.pie(tenure_counts, labels=tenure_cols, autopct='%1.1f%%', startangle=90)
     ax4.set_title("Tenure", fontsize=10)
+    st.markdown('<div class="demographic-box">', unsafe_allow_html=True)
     st.pyplot(fig4)
-
     st.markdown('</div>', unsafe_allow_html=True)

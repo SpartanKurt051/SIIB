@@ -111,7 +111,7 @@ left_col, right_col = st.columns(2)
 
 with left_col:
      gender_cols = df.columns[0:2]
-    gender_counts = df[gender_cols].sum()
+    gender_counts = df[gender_cols].sum()]
     fig1, ax1 = plt.subplots()
     ax1.pie(gender_counts, labels=gender_cols, autopct='%1.1f%%', startangle=90)
     ax1.set_title("Gender Distribution")

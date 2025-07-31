@@ -90,10 +90,10 @@ gender_sizes = gender_counts.values
 gender_labels = gender_counts.index.tolist()
 
 # Age columns
-age_cols = ['Up-to 35 yrs old', '35-45 yrs old', '45+ yrs old']
-age_counts = df[age_cols].sum()
-age_sizes = age_counts.values
-age_labels = age_counts.index.tolist()
+#age_cols = ['Up-to 35 yrs old', '35-45 yrs old', '45+ yrs old']
+#age_counts = df[age_cols].sum()
+#age_sizes = age_counts.values
+#age_labels = age_counts.index.tolist()
 
 # Department columns
 dept_cols = ['Sales & Marketing', 'R&D', 'Manufacturing', 'HR', 'Finance']

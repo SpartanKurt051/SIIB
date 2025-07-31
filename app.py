@@ -100,7 +100,6 @@ col1, col2, col3 = st.columns(3)
 
 # Column 1 — Gender
 with col1:
-    st.markdown('<div class="custom-column-box">', unsafe_allow_html=True)
     st.markdown('<div class="pie-chart-box">', unsafe_allow_html=True)
 
     gender_cols = df.columns[1:3]
@@ -110,7 +109,6 @@ with col1:
     ax1.set_title("Gender", fontsize=10)
     st.pyplot(fig1)
 
-    st.markdown('</div>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 # Column 2 — Department

@@ -33,6 +33,21 @@ st.markdown("""
         width: 1500px;
         max-width: 1500px;
     }
+
+    .small-chart-box {
+        background: #f5f5f5;
+        padding: 12px 8px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        margin-bottom: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 180px;
+        max-width: 220px;
+        margin-left: auto;
+        margin-right: auto;
+    }
      .stColumns {
         gap: 100px !important;
     }
@@ -74,6 +89,7 @@ col1, col2 = st.columns(2)
 def pie_chart(data, labels, title):
     fig, ax = plt.subplots(figsize=(2, 2))
     ax.pie(data, labels=labels, autopct='%1.1f%%')
+    ax.axis('equal')
     ax.set_title(title)
     st.pyplot(fig)
 
@@ -88,8 +104,9 @@ data_list = [
 # First 4 pie charts on left
 with col1:
     for data, labels, title in data_list:
+        st.markdown('<div class="small-chart-box">', unsafe_allow_html=True)
         pie_chart(data, labels, title)
-
+        st.markdown('</div>', unsafe_allow_html=True)
 # Second 4 pie charts on right
 with col2:
     for data, labels, title in data_list:

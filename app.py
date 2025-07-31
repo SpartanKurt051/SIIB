@@ -27,21 +27,6 @@ weakness_scores_sorted = dict(sorted(weakness_scores.items(), key=lambda item: i
 st.markdown("""
     <style>
 
-.demographic-box {
-        border: 2px solid #ccc;
-        border-radius: 12px;
-        padding: 16px;
-        margin: 12px auto;
-        width: 90%;
-        min-height: 220px;
-        background-color: rgba(255,255,255,0);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        flex-direction: column;
-        text-align: center;
-    }
 
     .stColumns {
         gap: 40px !important; /* Increase gap between columns */

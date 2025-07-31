@@ -91,8 +91,6 @@ else:
 
 df = pd.read_excel('SIIB.xlsx')
 df = df.iloc[:, 2:]
-st.write(df)
-
 # Divide the page into two columns below the Excel file
 # Demographics Section
 st.markdown("## Demographic Breakdown")

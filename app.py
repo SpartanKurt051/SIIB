@@ -62,4 +62,15 @@ engagement_row = df[df.iloc[:, 0] == 'Engagement']
 females_score = engagement_row['Female'].values[0]
 executive_score = engagement_row['Executive'].values[0]
 
+# Existing code
+st.write(df)
+
+# Divide the page into two columns below the Excel file
+left_col, right_col = st.columns(2)
+
+with left_col:
+    st.write("Left side content goes here.")
+
+with right_col:
+    st.write("Right side content goes here.")
 

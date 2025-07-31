@@ -3,6 +3,12 @@ import pandas as pd
 # Provided values
 employee_count = 100
 
+file_path = 'SIIB.xlsx'
+df = pd.read_excel(file_path)
+print(df)
+# Print the column names
+print("Column names:", df.columns.tolist())
+
 strength_scores = {
     'Customer Centricity': 96,
     'Job and Work Environments': 92,
@@ -52,8 +58,4 @@ if len(weakness_scores_sorted) > 0:
 else:
     st.info("No weakness KPIs found.")
     
-file_path = 'SIIB.xlsx'
-df = pd.read_excel(file_path)
-print(df)
-# Print the column names
-print("Column names:", df.columns.tolist())
+

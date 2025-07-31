@@ -91,8 +91,8 @@ st.write(df)
 left_col, right_col = st.columns(2)
 
 with left_col:
-    st.write("Left side content goes here.")
+    st.markdown('<div class="custom-column-box">Left side content goes here.</div>', unsafe_allow_html=True)
 
 with right_col:
-    st.write("Right side content goes here.")
+    st.markdown('<div class="custom-column-box">Right side content goes here.</div>', unsafe_allow_html=True)
 

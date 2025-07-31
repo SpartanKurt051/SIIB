@@ -110,31 +110,8 @@ tenure_labels = tenure_counts.index.tolist()
 left_col, right_col = st.columns(2)
 
 with left_col:
-    st.markdown('<div class="custom-column-box">', unsafe_allow_html=True)
-    # Gender Pie Chart
-    fig1, ax1 = plt.subplots(figsize=(1.3,1.3))
-    ax1.pie(gender_sizes, labels=gender_labels, autopct='%1.1f%%', startangle=90)
-    ax1.set_title("Gender", fontsize=10)
-    st.pyplot(fig1, use_container_width=False)
-
-    # Age Pie Chart
-    fig2, ax2 = plt.subplots(figsize=(1.3,1.3))
-    ax2.pie(age_sizes, labels=age_labels, autopct='%1.1f%%', startangle=90)
-    ax2.set_title("Age", fontsize=10)
-    st.pyplot(fig2, use_container_width=False)
-
-    # Department Pie Chart
-    fig3, ax3 = plt.subplots(figsize=(1.3,1.3))
-    ax3.pie(dept_sizes, labels=dept_labels, autopct='%1.1f%%', startangle=90)
-    ax3.set_title("Department", fontsize=10)
-    st.pyplot(fig3, use_container_width=False)
-
-    # Tenure Pie Chart
-    fig4, ax4 = plt.subplots(figsize=(1.3,1.3))
-    ax4.pie(tenure_sizes, labels=tenure_labels, autopct='%1.1f%%', startangle=90)
-    ax4.set_title("Tenure", fontsize=10)
-    st.pyplot(fig4, use_container_width=False)
-    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown('<div class="custom-column-box">Right side content goes here.</div>', unsafe_allow_html=True)
+    st.write("Columns in df:", df.columns.tolist())
 with right_col:
     st.markdown('<div class="custom-column-box">Right side content goes here.</div>', unsafe_allow_html=True)
 

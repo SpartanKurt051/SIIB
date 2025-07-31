@@ -55,3 +55,9 @@ else:
 df = pd.read_excel('SIIB.xlsx')
 df = df.iloc[:, 2:]
 st.write(df)
+
+engagement_row = df[df.iloc[:, 0] == 'Engagement']
+females_score = engagement_row['Females'].values[0]
+executive_score = engagement_row['Executive'].values[0]
+st.write(f"Engagement score for Females: {females_score}")
+st.write(f"Engagement score for Executive: {executive_score}")
